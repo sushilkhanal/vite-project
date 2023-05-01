@@ -11,15 +11,23 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
-  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    // force ESLint to resolve your project configuration relative to the folder where .eslintrc.js is located.
+    tsconfigRootDir: __dirname,
     project: './tsconfig.json',
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 0,
   },
+  // JSON, JSONC and JSON5 parser for use with ESLint plugins.
+  overrides: [
+    {
+      files: ['*.json', '*.json5'], // Specify the extension or pattern you want to parse as JSON.
+      parser: 'jsonc-eslint-parser', // Set this parser.
+    },
+  ],
 };
