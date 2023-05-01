@@ -19,9 +19,13 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: './tsconfig.json',
   },
+
   plugins: ['react', '@typescript-eslint', 'prettier'],
+
   rules: {
+    'import/extensions': ['error', 'ignorePackages', { '': 'never' }],
     'react/react-in-jsx-scope': 0,
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
   // JSON, JSONC and JSON5 parser for use with ESLint plugins.
   overrides: [
