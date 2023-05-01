@@ -10,7 +10,8 @@
     "lint:fix": "eslint src --ext ts,tsx --fix --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky install",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "husky": "husky install"
   },
   "dependencies": {
     "react": "^18.2.0",
